@@ -22,6 +22,32 @@
     //String functions
 
     echo strlen($name);
+
+    //Floats
+    $radius = 25;
+    $pi = 3.14;
+
+    //Basic Operators - *, /, ~, -, **;
+
+    echo $pi * $radius**2;
+
+    // Order of operation ( B I D M A S) brackets, indicies - power of, division, multiplication, addition, subtraction
+
+    echo 2 * 4 * (4 + 9) / 3;
+
+    // Increment and decrement operators
+    echo $radius++;
+    echo $radius--;
+
+    // Shorthand operators
+    $age = 25;
+    echo $age += 10;
+    echo $age -= 10;
+    echo $age *= 2;
+
+    echo floor($pi);
+    echo ceil($pi); // ceiling
+    echo pi(); // actually gets value for pi
 ?>
 
 <!DOCTYPE html>
