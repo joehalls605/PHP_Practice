@@ -48,6 +48,61 @@
     echo floor($pi);
     echo ceil($pi); // ceiling
     echo pi(); // actually gets value for pi
+
+
+    // Arrays
+    // Indexed arrays
+    $peopleOne = ["Joe", "Jack", "Phil", "Lucy"];
+    $peopleOne[0]; // "Joe"
+    $peopleOne[0] = "Ken";
+
+    // Pushing values
+    $peopleOne[] = 60;
+    // or
+    array_push($peopleOne, "Lewis");
+
+
+    // Associcative arrays
+    // Are key value pairs, unlike normal arrays that use indexes. So we use keys instead. (key & value pairs)
+
+    $ninjasOne = ["shaun" => "black", "joe" => "white"];
+    echo $ninjasOne["shaun"];// I use the key to access the value.
+
+    // another way of creating
+
+    $ninjasTwo = array("boris" => "green", "gerald" => "brown");
+
+    $ninjasThree = array_merge($ninjasOne, $ninjasTwo);
+
+    // Multidimensional arrays
+    $blogs = [
+        ["mario party", "mario", "lorem ipsum", 30],
+        ["wario party", "wario", "lorem ipsum", 10],
+        ["toad party", "toad", "lorem ipsum", 20]
+    ];
+
+    print($blogs[1][0]); // wario party
+
+    $ninjas = ["Jeff", "Phil", "John"];
+    for($i = 0; $i < count($ninjas); i++;){
+        echo $ninjas[$i];
+    }
+
+    foreach($ninjas as $ninja){
+        echo $ninjas "<br/>"
+    }
+
+    foreach($blogs as $blog){
+        echo $blog[0]."-";
+    }
+
+    $i = 0;
+    while($i < count($blogs)){
+        echo $products$[i]["name"];
+        $i++;
+    }
+
+
 ?>
 
 <!DOCTYPE html>
@@ -69,6 +124,10 @@
     <h1><?php echo "hello my name is ".$name;?></h1>
     <h1><?php echo strlen($name);?></h1>
     <h1><?php echo str_replace("J", "L", $name)?></h1>
+    <h1><?php echo $peopleOne[0]?></h1>
+    <h1><?php echo print_r($peopleOne)?></h1>
+
+
     </div>
 </body>
 </html>
