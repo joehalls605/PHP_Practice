@@ -168,11 +168,42 @@
         }
 
         echo $blog["title"]."<br/>";
-
     }
 
+    function sayHello($age){
+        echo $age;
+    }
+    sayHello($age);
+
+    function sayHelloDefault($age = 32){
+        echo $age;
+    }
+    sayHelloDefault($age);
+
+    function formatProduct($blog) {
+        echo "{$blog['title']} has {$blog['likes']} likes.";
+    }
+
+    formatProduct(["title" => "wario party", "likes" => 30]);
+
+    // scope
+    // local scope - within the function
+
+    // global variables - becaused declared outside of the function, I can use within the function
+    $bonjour = "bonjour";
+
+    function bonjour(){
+        global $bonjour; // gives access to the global variable
+        echo "$bonjour Joe";
+    }
+
+    // include and require
+    include("weather.php"); // imports the other file into this file. Warning error shown if cannot load
+    require("weather.php");  // requires the other file to be loaded into this file. Fatal error shown if cannot load
+    echo "end of php";
     
 
+    
 ?>
 
 <!DOCTYPE html>
@@ -211,5 +242,6 @@
     </ul>
     <h1><?php echo $renderedBlogs ?></h1>
     </div>
+    <?php include("content.php");?>
 </body>
 </html>
