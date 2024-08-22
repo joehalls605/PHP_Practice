@@ -245,3 +245,19 @@
     <?php include("content.php");?>
 </body>
 </html>
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>my first PHP file</title>
+</head>
+<body>
+    <div id="variables">
+    <h1></h1>
+    <?php include("./templates.php/header.php")?>
+    <?php include("./templates.php/footer.php")?>
+</body>
+</html>
