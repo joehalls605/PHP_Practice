@@ -84,12 +84,12 @@
     print($blogs[1][0]); // wario party
 
     $ninjas = ["Jeff", "Phil", "John"];
-    for($i = 0; $i < count($ninjas); i++;){
+    for($i = 0; $i < count($ninjas); $i++){
         echo $ninjas[$i];
     }
 
     foreach($ninjas as $ninja){
-        echo $ninjas "<br/>"
+        echo $ninja. "<br/>";
     }
 
     foreach($blogs as $blog){
@@ -98,10 +98,80 @@
 
     $i = 0;
     while($i < count($blogs)){
-        echo $products$[i]["name"];
+        echo $blogs[$i][0];
         $i++;
     }
 
+    // Booleans
+    // the comparison evalutes to 1 if true or "" if false.
+    echo 5 < 10;
+    echo 5 > 10;
+    echo 5 != 10;
+
+    echo 5 == "5"; // doesnt consider data type - true
+    echo 5 === "5"; // does consider the data type - false
+
+
+    //
+    $price = 20;
+    if($price < 30){
+        echo "condition is met";
+    }
+    elseif($price < 20){
+        echo "elseif condition is met";
+    }
+    else{
+        echo "condition is not met!";
+    }
+
+    $blogs = [
+        [
+            "title" => "mario party",
+            "author" => "mario",
+            "content" => "lorem ipsum",
+            "likes" => 30
+        ],
+        [
+            "title" => "wario party",
+            "author" => "wario",
+            "content" => "lorem ipsum",
+            "likes" => 10
+        ],
+        [
+            "title" => "toad party",
+            "author" => "toad",
+            "content" => "lorem ipsum",
+            "likes" => 20
+        ]
+    ];
+    
+    ob_start();
+
+    foreach($blogs as $blog){
+        if($blog["likes"] <= 20){
+            echo $blog["title"]."<br/>";
+        }
+    }
+
+    $renderedBlogs = ob_get_clean();
+
+    // Break and continue
+    // break - exits completely and breaks out of the loop, regardless of where we are in the loop.
+    // continue - it stops the code for that loop, then begins the next loop
+
+    foreach($blogs as $blog){
+        if($blog["likes"] === 20){
+            break;
+        }
+        if($blog["title"] === "wario party"){
+           continue;
+        }
+
+        echo $blog["title"]."<br/>";
+
+    }
+
+    
 
 ?>
 
@@ -126,8 +196,20 @@
     <h1><?php echo str_replace("J", "L", $name)?></h1>
     <h1><?php echo $peopleOne[0]?></h1>
     <h1><?php echo print_r($peopleOne)?></h1>
-
-
+    <h1><?php echo 5 < 10;?></h1>
+    <h1><?php echo 5 > 10;?></h1>
+    <h1><?php echo 5 == 10;?></h1>
+    <h1><?php echo 5 != 10;?></h1>
+    <h1><?php echo 5 <= 10;?></h1>
+    <h1><?php echo "joe" > "Joe" ?></h1>
+    <ul>
+        <?php foreach($blogs as $blog){ ?>
+            <?php if($blog["likes"] > 10){?>
+                <li><?php echo $blog["title"] ?></li>
+            <?php } ?>
+        <?php } ?>
+    </ul>
+    <h1><?php echo $renderedBlogs ?></h1>
     </div>
 </body>
 </html>
