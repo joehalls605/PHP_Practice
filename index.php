@@ -202,7 +202,27 @@
     require("weather.php");  // requires the other file to be loaded into this file. Fatal error shown if cannot load
     echo "end of php";
     
+    // classes
+    class User{
+        public $email;
+        public $name;
 
+        public function __construct($name, $email){
+            $this->email = $email;
+            $this->name = $name;
+        }
+
+        public function login(){
+            echo $userOne->name;
+        }
+    }
+
+    $userOne = new User();
+
+    $userOne->login();
+    echo $userOne->name;
+
+    $userTwo = new User("joe", "joebla@gmai.com");
     
 ?>
 
