@@ -215,6 +215,18 @@
         public function login(){
             echo $userOne->name;
         }
+
+        public function getName(){
+            return $this->name;
+        }
+        public function setName(){
+            if(is_string($name) && strlen() > 1){
+                $this->name = $name;
+            }
+            else{
+                return "not a valid name";
+            }
+        }
     }
 
     $userOne = new User();
